@@ -35,6 +35,15 @@ public class WebDriverUtility {
  public void waitUntilPageLoad(WebDriver driver)
  {
   driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+ }	
+ 
+ /**
+  * This method will maximize page
+  * @param driver
+  */
+ public void pageMaximize(WebDriver driver)
+ {
+	 driver.manage().window().maximize();
  }
  
  /**
@@ -91,6 +100,16 @@ public class WebDriverUtility {
   Select sel=new Select(element);
   sel.selectByIndex(index);
  }
+ /**
+  * 
+  * @param element
+  * @param value
+  */
+ public void selectOtion(WebElement element,String value)
+ {
+	 Select sel=new Select(element);
+	 sel.selectByValue(value);
+ }
  
  /**
   * This method will perform mouse over action
@@ -132,6 +151,20 @@ public class WebDriverUtility {
     break;
    }
   }
+ }
+ /**
+  * 
+  * @param driver
+  */
+ 
+ public void switchToWindow(WebDriver driver)
+ {
+	 Set<String> window=driver.getWindowHandles();
+	  Iterator<String> it=window.iterator();
+	  String parent=it.next();
+	  String chparent=it.next();
+	  driver.switchTo().window(chparent);
+	 
  }
  
  /**
@@ -183,7 +216,7 @@ public class WebDriverUtility {
  
  public void takeScreenshot(WebDriver driver, String screenshotName) throws IOException
  {
-  TakesScreenshot ts=(TakesScreenshot)driver;
+  TakesScreenshot ts=(TakesScreenshot)driver; // type casting
   File src=ts.getScreenshotAs(OutputType.FILE);
   File dest=new File("./screenshot/"+screenshotName+".PNG");
   Files.copy(src, dest);

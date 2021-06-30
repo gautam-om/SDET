@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="95599" started-at="2021-06-23T10:53:05 IST" finished-at="2021-06-23T10:54:40 IST">
+  <suite name="Default suite" duration-ms="119965" started-at="2021-06-30T12:00:33 IST" finished-at="2021-06-30T12:02:33 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="95599" started-at="2021-06-23T10:53:05 IST" finished-at="2021-06-23T10:54:40 IST">
-      <class name="TableHandling.CreateOrganizationJson">
-        <test-method status="PASS" signature="CreateOrganizationJson()[pri:0, instance:TableHandling.CreateOrganizationJson@4b1c1ea0]" name="CreateOrganizationJson" duration-ms="95363" started-at="2021-06-23T10:53:05 IST" finished-at="2021-06-23T10:54:40 IST">
+    <test name="Default test" duration-ms="119965" started-at="2021-06-30T12:00:33 IST" finished-at="2021-06-30T12:02:33 IST">
+      <class name="Repositry.CreateOrganization">
+        <test-method status="PASS" signature="CreateOrganizationJson()[pri:0, instance:Repositry.CreateOrganization@4b1c1ea0]" name="CreateOrganizationJson" duration-ms="119771" started-at="2021-06-30T12:00:33 IST" finished-at="2021-06-30T12:02:33 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateOrganizationJson -->
-      </class> <!-- TableHandling.CreateOrganizationJson -->
+      </class> <!-- Repositry.CreateOrganization -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

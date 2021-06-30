@@ -10,6 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.crm.genericUnit.JsonDataUtility;
+import com.crm.genericUnit.WebDriverUtility;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class MMT_Current_Date {     
@@ -17,6 +20,13 @@ public class MMT_Current_Date {
 	
 
 	public static void main(String[] args) throws Throwable {
+		
+		// Read Data from json file
+		JsonDataUtility jdu = new JsonDataUtility();
+		
+		
+		WebDriverUtility wdu= new WebDriverUtility();
+		
 		
 		   Date dateobj = new Date();
 
@@ -43,9 +53,13 @@ public class MMT_Current_Date {
 		
 	    WebDriverManager.chromedriver().setup(); 
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.makemytrip.com/");
-		driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		String URL = jdu.readDataFromJSON("mmturl");
+		driver.get(URL);
+		wdu.pageMaximize(driver);
+		wdu.waitUntilPageLoad(driver);
+		//driver.get("https://www.makemytrip.com/");
+		//driver.manage().window().maximize();
+	    //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    
 		WebElement source = driver.findElement(By.xpath("//input[@id='fromCity']"));
 		WebElement destination = driver.findElement(By.xpath("//input[@data-cy='toCity']"));
@@ -64,7 +78,8 @@ public class MMT_Current_Date {
 		Thread.sleep(7000);
 		
 		//driver.findElement(By.xpath("//div[@aria-label='Fri Jun 25 2021']"));
-		driver.findElement(By.xpath("//div[@aria-label='"+currentDate+"']")).click();	
+		driver.findElement(By.xpath("//div[@aria-label='"+currentDate+"']")).click();
+		System.out.println("Script pass");
 		
 		driver.close();
 	}

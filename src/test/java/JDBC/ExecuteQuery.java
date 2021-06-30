@@ -23,7 +23,7 @@ public class ExecuteQuery {
 //	  //Step 3: Issue create statement
 //	  Statement stat = con.createStatement();
 //	  //Step 4:Execute any query
-//	  ResultSet result = stat.executeQuery("select * from customer;");
+//	  ResultSet result = stat.executeQuery("select * from customer;");						
 //	  while(result.next())
 //	  {
 //	   System.out.println(result.getString(1));
